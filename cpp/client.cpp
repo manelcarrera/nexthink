@@ -1,19 +1,11 @@
 #include <iostream>
 #include <thread>
 #include <sstream>
-
 #include <boost/asio.hpp>
-
-//
 // must go after boost/assio !!!
 // Boost::asio winsock and winsock 2 compatibility issue
-//
 #include <windows.h>
-
-//#include <QtCore/QString>
-
 using namespace boost::asio;
-
 
 namespace
 {
@@ -48,7 +40,6 @@ namespace
 		}
 
 		return funci();
-
 		//return EXIT_SUCCESS;
 	}
 
@@ -117,9 +108,6 @@ namespace
 
 int main() 
 {
-	//QString s = "QString";
-	//std::cout << s.toStdString() << std::endl;
-
 	signal(SIGINT, shutdown);
 
 	std::thread t1(pool);
